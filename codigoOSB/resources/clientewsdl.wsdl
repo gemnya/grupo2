@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.globallogic.com.ar/getCliente" xmlns:cliente="http://www.globallogic.com.ar/cliente" targetNamespace="http://www.globallogic.com.ar/getCliente">
+
+	<wsdl:types>
+		<xs:schema targetNamespace="http://www.globallogic.com.ar/cliente" elementFormDefault="qualified">
+			<xs:include schemaLocation="./cliente.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getClienteRequest">
+		<wsdl:part name="parameter" element="cliente:ClienteRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getClienteResponse">
+		<wsdl:part name="parameter" element="cliente:ClienteResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="getClientePort">
+		<wsdl:operation name="getCliente">
+			<wsdl:input message="tns:getClienteRequest"/>
+			<wsdl:output message="tns:getClienteResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="getClienteBinding" type="tns:getClientePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getCliente">
+			<soap:operation soapAction="urn:/getCliente"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="getCliente">
+		<wsdl:port name="getClientePort" binding="tns:getClienteBinding">
+			<soap:address location="No Target Adress"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
+
