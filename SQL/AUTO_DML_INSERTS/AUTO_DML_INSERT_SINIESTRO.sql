@@ -1,0 +1,14 @@
+INSERT INTO SINIESTRO(ID_SINIESTRO, ID_POLIZA, TIPO, DESCRIPCION, FECHA, NRO_DENUNCIA)
+
+VALUES 
+
+(SINIESTRO_SEQ.NEXTVAL, 2, 'CHOQUE', 'El cliente chocó frontalmente con un poste de energía electrica, hirió a un transeunte',TO_DATE('08-24-2015  15:10','MM-DD-YYYY HH24:MI') , 548724);
+
+INSERT INTO SINIESTRO(ID_SINIESTRO, ID_POLIZA, TIPO, DESCRIPCION, FECHA, NRO_DENUNCIA)
+
+VALUES 
+
+(SINIESTRO_SEQ.NEXTVAL, 2, 'CHOQUE', 'El cliente chocó contra una casa , sin heridos o terceros',TO_DATE('08-24-2015  15:10','MM-DD-YYYY HH24:MI') , 548724);
+
+
+
